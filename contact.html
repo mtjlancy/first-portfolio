@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JLX | Contact Me</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="/index.html">
+					<img class="header-logo" src="/imgs/JLX.png" alt="Logo" />
+				</a>
+				<div class="link-container">
+					<a target="_blank" class="button-link" href="/contact.html">Contact</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<p>hello my name is john</p>
+			<form id="form">
+				<label for="firstName">First Name:</label>
+				<input type="text" id="firstName" name="firstName" autocomplete="on" required />
+				<label for="lastName">Last Name:</label>
+				<input type="text" id="lastName" name="lastName" autocomplete="on" required />
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" required></textarea>
+				<button type="submit">Submit</button>
+			</form>
+		</main>
+		<script>
+			let loginForm = document.getElementById('form');
+			loginForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				let firstName = document.getElementById('firstName').value;
+				let lastName = document.getElementById('lastName').value;
+				let message = document.getElementById('message').value;
+
+				window.location.href = `mailto:john.l@monstertrans.net?&subject=JLX Message From: ${firstName} ${lastName}&body=${message}`;
+			});
+		</script>
+	</body>
+</html>
